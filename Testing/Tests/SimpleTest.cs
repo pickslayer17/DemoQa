@@ -1,6 +1,5 @@
-﻿using System.Threading;
+﻿using System;
 using NUnit.Framework;
-using TestProject1.Pages;
 
 namespace TestProject1.Tests
 {
@@ -9,9 +8,7 @@ namespace TestProject1.Tests
         [Test]
         public void Simple()
         {
-            App.Flow.GoTo(ElementsPageBase.URL);
-            App.Pages.ElementsPageLib.ElementsPageBase.ClickTextBoxLi();
-            App.Pages.ElementsPageLib.TextBoxPage.WaitForPageLoad();
+            Console.Out.WriteLine("Just simple test to know browser is created and everything is fine");
         }
     }
 }

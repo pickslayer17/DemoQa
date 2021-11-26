@@ -10,14 +10,21 @@ namespace TestProject1.Pages
         public ElementsPageBase(IWebDriver driver) : base(driver)
         {
         }
-        
 
-        private Li _textBoxLi =>
-            new Li(Driver, By.XPath("//div[contains(@class,'element-list')][1]//li[@id='item-0']"));
+        private DemoQaLi TextBoxDemoQaLi =>
+            new(_driver, By.XPath("(//div[contains(@class,'element-list')])[1]//li[@id='item-0']"));
+
+        private DemoQaLi CheckBoxLi =>
+            new(_driver, By.XPath("(//div[contains(@class,'element-list')])[1]//li[@id='item-1']"));
 
         public void ClickTextBoxLi()
         {
-            _textBoxLi.Click();
+            TextBoxDemoQaLi.Click();
+        }
+
+        public void ClickCheckBoxLi()
+        {
+            CheckBoxLi.Click();
         }
     }
 }

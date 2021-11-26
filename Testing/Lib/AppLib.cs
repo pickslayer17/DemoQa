@@ -4,9 +4,9 @@ namespace Testing.Lib
 {
     public class AppLib
     {
-        public readonly PageLibBase Pages;
         public readonly FlowLib Flow;
-        
+        public readonly PageLibBase Pages;
+
         public AppLib(IWebDriver driver)
         {
             Pages = new PageLibBase(driver);

@@ -5,6 +5,7 @@ namespace Testing.Lib
 {
     public class ElementsPageLib
     {
+        public readonly CheckBoxPage CheckBoxPage;
         public readonly ElementsPageBase ElementsPageBase;
         public readonly TextBoxPage TextBoxPage;
 
@@ -12,6 +13,7 @@ namespace Testing.Lib
         {
             ElementsPageBase = new ElementsPageBase(driver);
             TextBoxPage = new TextBoxPage(driver);
+            CheckBoxPage = new CheckBoxPage(driver);
         }
     }
 }

@@ -10,17 +10,24 @@ using WebDriverManager.DriverConfigs;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager.Helpers;
 
+[assembly: Parallelizable(ParallelScope.All)]
+
 namespace TestProject1.Tests
 {
     public abstract class AbstractTest : IDisposable
     {
         private IWebDriver _driver;
-        public  AppLib App { get; private set; }
+        protected AppLib App { get; private set; }
+
+        public void Dispose()
+        {
+            _driver.Quit();
+        }
 
         private void SetUpDriver(DriverName browserName)
         {
             IDriverConfig driverConfig;
-            switch (browserName) 
+            switch (browserName)
             {
                 case DriverName.CHROME:
                     driverConfig = new ChromeConfig();
@@ -35,25 +42,19 @@ namespace TestProject1.Tests
                 default:
                     throw new Exception("You add browser name to enum, but forget to describe behaviour for it");
             }
-
         }
+
         [SetUp]
         public void Setup()
         {
             SetUpDriver(DriverName.CHROME);
             App = new AppLib(_driver);
-
         }
 
         [TearDown]
         public void TearDown()
         {
             _driver.Close();
-        }
-
-        public void Dispose()
-        {
-            _driver.Quit();
         }
     }
 }

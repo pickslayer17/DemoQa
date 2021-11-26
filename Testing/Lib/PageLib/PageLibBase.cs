@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using TestProject1.Pages;
 
 namespace Testing.Lib
 {
