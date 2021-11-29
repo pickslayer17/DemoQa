@@ -2,7 +2,7 @@
 
 namespace TestProject1.PageElements
 {
-    public class DemoQaInput : AbstractElement
+    public class DemoQaInput : DemoQaElement
     {
         public DemoQaInput(IWebDriver driver, By locator) : base(driver, locator)
         {

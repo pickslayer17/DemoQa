@@ -2,7 +2,7 @@
 
 namespace TestProject1.PageElements
 {
-    public class DemoQaLi : AbstractElement
+    public class DemoQaLi : DemoQaElement
     {
         public DemoQaLi(IWebDriver driver, By locator) : base(driver, locator)
         {
