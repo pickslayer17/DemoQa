@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 
 namespace TestProject1.Tests
@@ -9,6 +10,7 @@ namespace TestProject1.Tests
         public void Simple()
         {
             Console.Out.WriteLine("Just simple test to know browser is created and everything is fine");
+            
         }
     }
 }

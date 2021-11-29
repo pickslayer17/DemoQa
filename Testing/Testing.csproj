@@ -16,6 +16,7 @@
         <PackageReference Include="WebDriverManager" Version="2.12.2" />
     </ItemGroup>
 
+    
     <ItemGroup>
         <None Remove="TestSettings.json" />
         <Content Include="TestSettings.json">

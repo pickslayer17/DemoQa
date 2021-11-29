@@ -10,6 +10,7 @@ namespace TestProject1.Tests.ElementsPageTests
         public void Smoke_BorderColorTest()
         {
             App.Flow.GoTo(ElementsPageBase.URL);
+            App.Pages.ElementsPageLib.ElementsPageBase.WaitForPageLoad();
             App.Pages.ElementsPageLib.ElementsPageBase.ClickTextBoxLi();
             App.Pages.ElementsPageLib.TextBoxPage.WaitForPageLoad();
             var name = "Johnny";

@@ -10,6 +10,7 @@ namespace TestProject1.Tests.ElementsPageTests
         public void Smoke_CheckTreeTest()
         {
             App.Flow.GoTo(ElementsPageBase.URL);
+            App.Pages.ElementsPageLib.ElementsPageBase.WaitForPageLoad();
             App.Pages.ElementsPageLib.ElementsPageBase.ClickCheckBoxLi();
             App.Pages.ElementsPageLib.CheckBoxPage.WaitForPageLoad();
             App.Pages.ElementsPageLib.CheckBoxPage.ExpandAll();

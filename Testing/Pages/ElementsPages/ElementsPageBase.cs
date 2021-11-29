@@ -11,20 +11,20 @@ namespace TestProject1.Pages
         {
         }
 
-        private DemoQaLi TextBoxDemoQaLi =>
+        private DemoQaLi _textBoxDemoQaLi =>
             new(_driver, By.XPath("(//div[contains(@class,'element-list')])[1]//li[@id='item-0']"));
 
-        private DemoQaLi CheckBoxLi =>
+        private DemoQaLi _checkBoxLi =>
             new(_driver, By.XPath("(//div[contains(@class,'element-list')])[1]//li[@id='item-1']"));
 
-        public void ClickTextBoxLi()
-        {
-            TextBoxDemoQaLi.Click();
-        }
+        private DemoQaLi _radioButtonLi =>
+            new(_driver, By.XPath("(//div[contains(@class,'element-list')])[1]//li[@id='item-2']"));
 
-        public void ClickCheckBoxLi()
-        {
-            CheckBoxLi.Click();
-        }
+        public void ClickTextBoxLi() => _textBoxDemoQaLi.Click();
+
+        public void ClickCheckBoxLi() =>_checkBoxLi.Click();
+
+        public void ClickRadioButtonLi() => _radioButtonLi.Click();
+
     }
 }

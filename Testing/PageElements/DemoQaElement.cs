@@ -12,12 +12,13 @@ namespace TestProject1.PageElements
     public class DemoQaElement  
     {
         protected readonly IWebElement _webElement;
-
-        protected DemoQaElement(IWebDriver driver, By locator)
+        protected IWebDriver _driver;
+        public DemoQaElement(IWebDriver driver, By locator)
         {
             new WebDriverWait(driver, TimeSpan.FromSeconds(TestSettings.Timeout)).Until(
                 ExpectedConditions.ElementExists(locator));
             _webElement = driver.FindElement(locator);
+            _driver = driver;
         }
 
         private DemoQaElement(IWebElement webElement)
