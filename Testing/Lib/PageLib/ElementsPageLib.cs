@@ -9,6 +9,7 @@ namespace Testing.Lib
         public readonly ElementsPageBase ElementsPageBase;
         public readonly TextBoxPage TextBoxPage;
         public readonly RadioButtonPage RadioButtonPage;
+        public readonly WebTablesPage WebTablesPage;
 
         public ElementsPageLib(IWebDriver driver)
         {
@@ -16,6 +17,7 @@ namespace Testing.Lib
             TextBoxPage = new TextBoxPage(driver);
             CheckBoxPage = new CheckBoxPage(driver);
             RadioButtonPage = new RadioButtonPage(driver);
+            WebTablesPage = new WebTablesPage(driver);
         }
     }
 }

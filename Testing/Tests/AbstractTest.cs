@@ -1,8 +1,10 @@
 ﻿using System;
 using NUnit.Framework;
+using NUnit.Framework.Internal.Commands;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Remote;
 using Testing.Lib;
 using TestProject1.Enums;
 using WebDriverManager;
@@ -18,7 +20,7 @@ namespace TestProject1.Tests
     {
         private IWebDriver _driver;
         protected AppLib App { get; private set; }
-
+        
         public void Dispose()
         {
             _driver.Quit();

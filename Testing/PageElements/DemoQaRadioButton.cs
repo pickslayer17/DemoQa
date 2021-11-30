@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
 namespace TestProject1.PageElements
 {
@@ -11,7 +12,7 @@ namespace TestProject1.PageElements
         public bool IsSelected() => _webElement.Selected;
         public override void Click()
         {
-            ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", _webElement);
+            new Actions(_driver).MoveToElement(_webElement).Click(_webElement).Perform();
         }
     }
 }

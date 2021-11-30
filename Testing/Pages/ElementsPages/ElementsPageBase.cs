@@ -19,12 +19,15 @@ namespace TestProject1.Pages
 
         private DemoQaLi _radioButtonLi =>
             new(_driver, By.XPath("(//div[contains(@class,'element-list')])[1]//li[@id='item-2']"));
+        private DemoQaLi _WebTableLi =>
+            new(_driver, By.XPath("(//div[contains(@class,'element-list')])[1]//li[@id='item-3']"));
 
-        public void ClickTextBoxLi() => _textBoxDemoQaLi.Click();
+        public void GoToTextBox() => _textBoxDemoQaLi.Click();
 
-        public void ClickCheckBoxLi() =>_checkBoxLi.Click();
+        public void GoToCheckBox() =>_checkBoxLi.Click();
 
-        public void ClickRadioButtonLi() => _radioButtonLi.Click();
+        public void GoToRadioButton() => _radioButtonLi.Click();
 
+        public void GoToWebTables() => _WebTableLi.Click();
     }
 }

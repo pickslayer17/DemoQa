@@ -9,7 +9,7 @@ namespace TestProject1.Pages
         {
         }
 
-        private DemoQaRadioButton _yesRBtn => new (_driver, By.Id("yesRadio"));
+        private DemoQaRadioButton _yesRBtn => new (_driver, By.XPath("//input[@id='yesRadio']"));
         private DemoQaRadioButton _implressiveRBtn => new (_driver, By.Id("impressiveRadio"));
         private DemoQaRadioButton _noRadioRBtn => new (_driver, By.Id("noRadio"));
         private DemoQaElement _successSpan => new(_driver, By.XPath("//span[@class='text-success']"));

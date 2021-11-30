@@ -11,7 +11,7 @@ namespace TestProject1.Tests.ElementsPageTests
         {
             App.Flow.GoTo(ElementsPageBase.URL);
             App.Pages.ElementsPageLib.ElementsPageBase.WaitForPageLoad();
-            App.Pages.ElementsPageLib.ElementsPageBase.ClickTextBoxLi();
+            App.Pages.ElementsPageLib.ElementsPageBase.GoToTextBox();
             App.Pages.ElementsPageLib.TextBoxPage.WaitForPageLoad();
             var name = "Johnny";
             var email = "asd@mail.ru";

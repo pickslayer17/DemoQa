@@ -15,5 +15,10 @@ namespace TestProject1.PageElements
         {
             return BorderColor == "rgb(255, 0, 0)";
         }
+
+        public override string Text()
+        {
+            return _webElement.GetAttribute("value");
+        }
     }
 }

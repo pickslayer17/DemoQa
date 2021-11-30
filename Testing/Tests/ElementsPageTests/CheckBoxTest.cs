@@ -11,7 +11,7 @@ namespace TestProject1.Tests.ElementsPageTests
         {
             App.Flow.GoTo(ElementsPageBase.URL);
             App.Pages.ElementsPageLib.ElementsPageBase.WaitForPageLoad();
-            App.Pages.ElementsPageLib.ElementsPageBase.ClickCheckBoxLi();
+            App.Pages.ElementsPageLib.ElementsPageBase.GoToCheckBox();
             App.Pages.ElementsPageLib.CheckBoxPage.WaitForPageLoad();
             App.Pages.ElementsPageLib.CheckBoxPage.ExpandAll();
             App.Pages.ElementsPageLib.CheckBoxPage.CheckSpan(CheckBoxPage.Spans.Desktop);

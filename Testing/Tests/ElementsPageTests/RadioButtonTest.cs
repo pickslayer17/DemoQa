@@ -12,7 +12,7 @@ namespace TestProject1.Tests.ElementsPageTests
         {
             App.Flow.GoTo(ElementsPageBase.URL);
             App.Pages.ElementsPageLib.ElementsPageBase.WaitForPageLoad();
-            App.Pages.ElementsPageLib.ElementsPageBase.ClickRadioButtonLi();
+            App.Pages.ElementsPageLib.ElementsPageBase.GoToRadioButton();
             App.Pages.ElementsPageLib.RadioButtonPage.WaitForPageLoad();
             App.Pages.ElementsPageLib.RadioButtonPage.ClickYesRBtn();
             var expectedOfYes = "Yes";
