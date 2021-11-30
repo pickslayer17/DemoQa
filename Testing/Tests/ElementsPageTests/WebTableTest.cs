@@ -19,20 +19,18 @@ namespace TestProject1.Tests.ElementsPageTests
             WebTable tableFromPage = App.Pages.ElementsPageLib.WebTablesPage.GetTableFromPage();
             tableFromPage.PrintTableOut();
 
-
             WebTable etalonTable = tableFromPage;
             etalonTable.AddDefaultRow();
             App.Pages.ElementsPageLib.WebTablesPage.AddRecord(etalonTable.GetLastRow());
             tableFromPage = App.Pages.ElementsPageLib.WebTablesPage.GetTableFromPage();
             Assert.That(etalonTable.Equals(tableFromPage));
-            
+
             App.Pages.ElementsPageLib.WebTablesPage.AddRecord(etalonTable.GetLastRow());
             App.Pages.ElementsPageLib.WebTablesPage.AddRecord(etalonTable.GetLastRow());
             App.Pages.ElementsPageLib.WebTablesPage.AddRecord(etalonTable.GetLastRow());
-           
+
             tableFromPage = App.Pages.ElementsPageLib.WebTablesPage.GetTableFromPage();
             tableFromPage.PrintTableOut();
         }
-        
     }
 }

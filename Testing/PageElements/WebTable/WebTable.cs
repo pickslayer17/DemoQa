@@ -50,11 +50,6 @@ namespace TestProject1.PageElements.WebTable
             _table.Rows.Add(dataRow);
         }
 
-        public string GetCellValue()
-        {
-            return null;
-        }
-
         public DataRow GetLastRow()
         {
             return _table.Rows[^1];
