@@ -32,7 +32,7 @@ namespace TestProject1.Pages
             _addButton.Click();
             _firstNameInput.SendKeys(record[0].ToString());
             _lastNameInput.SendKeys(record[1].ToString());
-            _userEmailInput.SendKeys(record[3].ToString());
+            _userEmailInput.SendKeys(record[3].ToString());//email and age are swapped on the Page
             _ageInput.SendKeys(record[2].ToString());
             _salaryInput.SendKeys(record[4].ToString());
             _departmentInput.SendKeys(record[5].ToString());
@@ -42,11 +42,11 @@ namespace TestProject1.Pages
         public WebTable GetTableFromPage()
         {
             WebTable table = new WebTable();
-            _rowsPerPageSelect.SelectByIndex(0);
+            _rowsPerPageSelect.SelectByIndex(0);//select "5 rows" on page because of customers logic
             for (int x = 1; x <= int.Parse(_totalPagesSpan.Text().Trim()); x++)
             {
                 int i = 1;
-                while (i <= 5 && _table.IsCellSuits(i, 1))
+                while (i <= 5 && _table.IsCellValid(i, 1))
                 {
                     var fName = _table.GetCellFromPage(i, 1);
                     var lName = _table.GetCellFromPage(i, 2);
@@ -54,15 +54,14 @@ namespace TestProject1.Pages
                     var email = _table.GetCellFromPage(i, 4);
                     var salary = int.Parse(_table.GetCellFromPage(i, 5));
                     var department = _table.GetCellFromPage(i, 6);
-                    table.AddConcreteRow(fName, lName, age, email, salary, department);
+                    table.AddRow(fName, lName, age, email, salary, department);
                     i++;
                 }
                 if (int.Parse(_jumpToPageInput.Text().Trim()) < int.Parse(_totalPagesSpan.Text().Trim()))
                 {
-                    _nextDiv.Click();
+                    _nextDiv.Click(); //click "Next" button until we get all data from table
                 }
-            }
-
+            } 
             return table;
         }
     }

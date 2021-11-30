@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Runtime.CompilerServices;
 
 namespace TestProject1.PageElements.WebTable
 {
@@ -36,14 +35,12 @@ namespace TestProject1.PageElements.WebTable
                 Console.Out.WriteLine("");
             }
         }
-        public void AddDefaultRow()
+        public void AddExampleRow()
         {
-            DataRow dataRow = _table.NewRow();
-            dataRow.ItemArray = new object?[] {"Alexey", "Ivanchik", 24, "DanWolf@gmail.com", 1500, "QA"};
-            _table.Rows.Add(dataRow);
+            AddRow("Alexey", "Ivanchik", 24, "DanWolf@gmail.com", 1500, "QA");
         }
 
-        public void AddConcreteRow(string fName, string lName, int age, string email, int salary, string department)
+        public void AddRow(string fName, string lName, int age, string email, int salary, string department)
         {
             DataRow dataRow = _table.NewRow();
             dataRow.ItemArray = new object?[] {fName, lName, age, email, salary, department};
@@ -80,7 +77,7 @@ namespace TestProject1.PageElements.WebTable
                     }
                 }
             }
-            catch (ArgumentOutOfRangeException ex)
+            catch (IndexOutOfRangeException ex)
             {
                 Console.Out.WriteLine(ex.ToString());
                 return false;

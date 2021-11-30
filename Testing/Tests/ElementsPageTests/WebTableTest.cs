@@ -20,15 +20,20 @@ namespace TestProject1.Tests.ElementsPageTests
             tableFromPage.PrintTableOut();
 
             WebTable etalonTable = tableFromPage;
-            etalonTable.AddDefaultRow();
+            etalonTable.AddExampleRow();
             App.Pages.ElementsPageLib.WebTablesPage.AddRecord(etalonTable.GetLastRow());
             tableFromPage = App.Pages.ElementsPageLib.WebTablesPage.GetTableFromPage();
             Assert.That(etalonTable.Equals(tableFromPage));
-
+            
+            etalonTable.AddExampleRow();
             App.Pages.ElementsPageLib.WebTablesPage.AddRecord(etalonTable.GetLastRow());
+            etalonTable.AddExampleRow();
             App.Pages.ElementsPageLib.WebTablesPage.AddRecord(etalonTable.GetLastRow());
+            etalonTable.AddExampleRow();
             App.Pages.ElementsPageLib.WebTablesPage.AddRecord(etalonTable.GetLastRow());
-
+            tableFromPage = App.Pages.ElementsPageLib.WebTablesPage.GetTableFromPage();
+            Assert.That(etalonTable.Equals(tableFromPage));
+            
             tableFromPage = App.Pages.ElementsPageLib.WebTablesPage.GetTableFromPage();
             tableFromPage.PrintTableOut();
         }
